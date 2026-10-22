@@ -8,7 +8,8 @@ CARPETA_REPORTES = r"D:\PROYECTO_facturacion\reportes_diarios"
 def limpiar_reportes_antiguos():
     print("--- INICIANDO MANTENIMIENTO AUTOMATIZADO ---")
 
-    # CONTROL DE SEGURIDAD: Si el alumno olvidó crear la carpeta, el script falla.
+    # CONTROL DE SEGURIDAD: Si el alumno olvidó crear la carpeta, el script
+    # falla.
     if not os.path.exists(CARPETA_REPORTES):
         print("[ERROR CRÍTICO]: No existe la carpeta 'reportes_diarios'.")
         print(
@@ -28,7 +29,8 @@ def limpiar_reportes_antiguos():
             fecha_modificacion = os.path.getmtime(ruta_completa)
 
             # REGLA: Compara el tiempo actual con la fecha del archivo.
-            # Como el archivo ya existe en tu disco, la diferencia será mayor a 5 segundos.
+            # Como el archivo ya existe en tu disco, la diferencia será mayor a
+            # 5 segundos.
             if (tiempo_actual - fecha_modificacion) > 5:
                 os.remove(ruta_completa)
                 print(f"[CONSOLA] Archivo obsoleto eliminado: {archivo}")
